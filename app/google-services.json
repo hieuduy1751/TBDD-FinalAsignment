@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "551580207239",
+    "project_id": "tbdd-final-assignment-nhom15",
+    "storage_bucket": "tbdd-final-assignment-nhom15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551580207239:android:f2666d3317882c0e425022",
+        "android_client_info": {
+          "package_name": "com.example.finalassignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551580207239-l6vue17h7mobru5e72herqtnmb2ltgso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAR-WSmSuQeHjeTbOpsC48nncwyxhjq1bM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "551580207239-l6vue17h7mobru5e72herqtnmb2ltgso.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
