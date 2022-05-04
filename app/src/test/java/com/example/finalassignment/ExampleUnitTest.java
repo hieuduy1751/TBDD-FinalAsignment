@@ -1,4 +1,4 @@
-package com.example.tbddlab08;
+package com.example.finalassignment;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.tbddlab08;
+package com.example.finalassignment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -28,13 +30,13 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button btnRegister = (Button) findViewById(R.id.btnRGLG);
-        Button btnLogin = (Button) findViewById(R.id.btnSignIn);
-        EditText txtEmail = (EditText) findViewById(R.id.txtEmailLG);
-        EditText txtPassword = (EditText) findViewById(R.id.txtPasswordLG);
+        TextView txtRegister = (TextView) findViewById(R.id.txt_register);
+        ImageButton btnLogin = (ImageButton) findViewById(R.id.btn_signin_2);
+        EditText txtEmail = (EditText) findViewById(R.id.edt_username);
+        EditText txtPassword = (EditText) findViewById(R.id.edt_password);
 
 
-        btnRegister.setOnClickListener(new View.OnClickListener() {
+        txtRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openRegister();

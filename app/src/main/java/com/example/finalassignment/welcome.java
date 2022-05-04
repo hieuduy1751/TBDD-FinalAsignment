@@ -1,4 +1,4 @@
-package com.example.tbddlab08;
+package com.example.finalassignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,8 +17,8 @@ public class welcome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        Button btnLogin = (Button) findViewById(R.id.btnWelcomeSignIn);
-        Button btnRegister = (Button) findViewById(R.id.btnWelcomeRegister);
+        Button btnLogin = (Button) findViewById(R.id.btn_signin);
+        Button btnRegister = (Button) findViewById(R.id.btn_signup);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

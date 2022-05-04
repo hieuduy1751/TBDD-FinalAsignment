@@ -1,4 +1,4 @@
-package com.example.tbddlab08;
+package com.example.finalassignment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -17,8 +20,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
-
-import org.w3c.dom.UserDataHandler;
 
 public class register extends AppCompatActivity {
     Context context;
@@ -31,15 +32,15 @@ public class register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        Button btnLogin = (Button) findViewById(R.id.btnSIRG);
-        Button btnRegister = (Button) findViewById(R.id.btnRGT);
-        EditText txtEmail = (EditText) findViewById(R.id.txtEmailRG);
-        EditText txtName = (EditText) findViewById(R.id.txtNameRG);
-        EditText txtPassword = (EditText) findViewById(R.id.txtPasswordRG);
-        EditText txtCfPassword = (EditText) findViewById(R.id.txtPasswordRG2);
+        TextView txtSignin = (TextView) findViewById(R.id.txt_res_signin);
+        ImageButton btnRegister = (ImageButton) findViewById(R.id.btn_res);
+        EditText txtEmail = (EditText) findViewById(R.id.edt_res_email);
+        EditText txtName = (EditText) findViewById(R.id.edt_res_name);
+        EditText txtPassword = (EditText) findViewById(R.id.edt_res_pass);
+        EditText txtCfPassword = (EditText) findViewById(R.id.edt_res_confirmpass);
 
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        txtSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openLogin();
