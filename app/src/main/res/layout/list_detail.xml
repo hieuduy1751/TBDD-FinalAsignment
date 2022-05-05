@@ -7,11 +7,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constr_item_detail"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="2dp"
         android:layout_width="409dp"
         android:layout_height="79dp"
-        android:background="@drawable/border_edt">
+        android:layout_marginTop="24dp"
+        android:background="@drawable/border_edt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/txt_title_detail"
