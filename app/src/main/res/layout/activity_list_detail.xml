@@ -8,9 +8,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constr_list_detail"
         android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_height="800dp"
         android:background="#E9EFC0"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -38,7 +37,8 @@
             android:hint="         Search"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <ImageView
             android:id="@+id/imageView15"
@@ -65,20 +65,19 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constr_detail"
             android:layout_width="410dp"
-            android:layout_height="636dp"
+            android:layout_height="720dp"
+            android:layout_marginTop="10dp"
             android:background="#B4E197"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_search_detail"
-            app:layout_constraintVertical_bias="1.0">
+            app:layout_constraintTop_toBottomOf="@+id/edt_search_detail">
 
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="110dp"
                 android:layout_height="29dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="28dp"
                 android:layout_marginTop="16dp"
                 android:shadowColor="#353535"
                 android:shadowDx="10"
@@ -103,13 +102,14 @@
                 android:id="@+id/btn_newtask"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginBottom="68dp"
                 android:background="@drawable/important_1"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/lst_detail"
                 app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="@+id/lst_detail"
-                app:layout_constraintTop_toBottomOf="@+id/lst_detail"
-                app:srcCompat="@drawable/important_1" />
+                app:srcCompat="@drawable/important_1"
+                tools:ignore="SpeakableTextPresentCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

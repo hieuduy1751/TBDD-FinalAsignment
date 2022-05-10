@@ -17,6 +17,16 @@
         <entry key="..\:/Nam3_Ki2/LT Di dong/TBDD-FinalAsignment-Nhom15/app/src/main/res/layout/list_item.xml" value="0.264" />
         <entry key="..\:/Nam3_Ki2/LT Di dong/TBDD-FinalAsignment-Nhom15/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.121" />
         <entry key="..\:/Nam3_Ki2/LT Di dong/TBDD-FinalAsignment-Nhom15/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="app/src/main/res/font/roboto_bold.xml" value="0.3132420091324201" />
+        <entry key="app/src/main/res/layout/activity_forgot_pass.xml" value="0.29074074074074074" />
+        <entry key="app/src/main/res/layout/activity_list_detail.xml" value="0.29074074074074074" />
+        <entry key="app/src/main/res/layout/activity_list_todo.xml" value="0.29074074074074074" />
+        <entry key="app/src/main/res/layout/activity_logged_in.xml" value="0.29074074074074074" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.29074074074074074" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.29074074074074074" />
+        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.29074074074074074" />
+        <entry key="app/src/main/res/layout/list_detail.xml" value="0.30925925925925923" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.30925925925925923" />
       </map>
     </option>
   </component>

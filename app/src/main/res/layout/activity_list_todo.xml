@@ -8,20 +8,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constr_list_todo"
         android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_height="800dp"
         android:background="#E9EFC0"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="413dp"
-            android:layout_height="641dp"
+            android:layout_height="720dp"
+            android:layout_marginTop="10dp"
             android:background="#B4E197"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_search">
 
             <ListView
                 android:id="@+id/lst_cutsomlist"
@@ -36,7 +36,8 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="16dp"
                 android:text="Personal list"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -51,10 +52,11 @@
                 android:layout_marginTop="16dp"
                 android:background="@drawable/all"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.279"
+                app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/all" />
+                app:srcCompat="@drawable/all"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
                 android:id="@+id/btn_important"
@@ -66,7 +68,8 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/btn_all"
                 app:layout_constraintTop_toBottomOf="@+id/btn_all"
-                app:srcCompat="@drawable/important" />
+                app:srcCompat="@drawable/important"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
                 android:id="@+id/btn_today"
@@ -78,19 +81,21 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/btn_important"
                 app:layout_constraintTop_toBottomOf="@+id/btn_important"
-                app:srcCompat="@drawable/today" />
+                app:srcCompat="@drawable/today"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
                 android:id="@+id/btn_addlist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginBottom="68dp"
                 android:background="@drawable/add_list"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintHorizontal_bias="0.473"
                 app:layout_constraintStart_toStartOf="@+id/lst_cutsomlist"
-                app:layout_constraintTop_toBottomOf="@+id/lst_cutsomlist"
-                app:srcCompat="@drawable/add_list" />
+                app:srcCompat="@drawable/add_list"
+                tools:ignore="SpeakableTextPresentCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -106,7 +111,8 @@
             android:hint="         Search"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <ImageView
             android:id="@+id/imageView11"
