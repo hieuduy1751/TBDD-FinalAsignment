@@ -81,7 +81,7 @@ public class register extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(user.getUid() != null) {
-                                        openLoggedIn();
+                                        openLogin();
                                         Log.d("msg", "onComplete: " + user.getDisplayName());
                                     }
                                 }
@@ -90,6 +90,7 @@ public class register extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("Register", "createUserWithEmail:failure", task.getException());
+                            openLogin();
                         }
                     }
                 });

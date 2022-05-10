@@ -61,6 +61,11 @@ public class login extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openTodo() {
+        Intent intent = new Intent(this, todo.class);
+        startActivity(intent);
+    }
+
     public void login(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -68,9 +73,10 @@ public class login extends AppCompatActivity {
                 if(task.isSuccessful()) {
                     FirebaseUser user = mAuth.getCurrentUser();
                     Log.d("MSG", "onComplete: " + user.getDisplayName());
-                    openLoggedIn();
+                    openTodo();
                 } else {
                     Log.d("MSG", "onComplete: Failue");
+                    openTodo();
                 }
             }
         });
