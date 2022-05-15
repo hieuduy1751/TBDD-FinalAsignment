@@ -1,0 +1,99 @@
+package com.example.finalassignment;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+public class login extends AppCompatActivity {
+    Context context;
+    private FirebaseAuth mAuth;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        context = this;
+        mAuth = FirebaseAuth.getInstance();
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
+        Button btnRegister = (Button) findViewById(R.id.btnRGLG);
+        Button btnLogin = (Button) findViewById(R.id.btnLGLG);
+        Button btnGG = (Button) findViewById(R.id.btnGG3);
+        TextView btnForgot = (TextView) findViewById(R.id.txt_forgotpass);
+        EditText txtEmail = (EditText) findViewById(R.id.edt_username);
+        EditText txtPassword = (EditText) findViewById(R.id.edt_password);
+
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openRegister();
+            }
+        });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginWithEmailAndPassword(txtEmail.getText().toString(), txtPassword.getText().toString());
+            }
+        });
+
+        btnForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openForgot();
+            }
+        });
+
+        btnGG.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // todo login with gg
+            }
+        });
+    }
+
+    public void openRegister(){
+        Intent intent = new Intent(this, register.class);
+        startActivity(intent);
+    }
+
+    public void openTodo() {
+        Intent intent = new Intent(this, todo.class);
+        startActivity(intent);
+    }
+
+    public void openForgot() {
+        Intent intent = new Intent(this, forgot.class);
+        startActivity(intent);
+    }
+
+    public void loginWithEmailAndPassword(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    Log.d("MSG", "onComplete: " + user.getDisplayName());
+                    openTodo();
+                } else {
+                    Log.d("MSG", "onComplete: Failue");
+                }
+            }
+        });
+    }
+}

@@ -7,83 +7,113 @@
     android:backgroundTintMode="add"
     tools:context=".welcome">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="440dp"
-        android:layout_height="450dp"
-        android:layout_marginTop="356dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constr_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E9EFC0"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/intersect" />
+        app:layout_constraintVertical_bias="0.0">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="104dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/group_3" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="110.14dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="64dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/_6968764" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="52dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/group_4" />
+        <TextView
+            android:id="@+id/lblAppTeam"
+            android:layout_width="315dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/robotomono_bold"
+            android:text="Coding Club"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="38dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/group_5" />
+        <TextView
+            android:id="@+id/lblAppName"
+            android:layout_width="272dp"
+            android:layout_height="77dp"
+            android:fontFamily="@font/robotomono_bold"
+            android:text="To-Do"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="60dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/lblAppTeam"
+            app:layout_constraintStart_toStartOf="@+id/lblAppTeam"
+            app:layout_constraintTop_toBottomOf="@+id/lblAppTeam" />
 
-    <Button
-        android:id="@+id/btnWelcomeSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="44dp"
-        android:backgroundTint="#EF77B0"
-        android:paddingStart="100dp"
-        android:paddingTop="17dp"
-        android:paddingEnd="100dp"
-        android:paddingBottom="17dp"
-        android:text="SIGN IN"
-        android:textSize="18sp"
-        app:cornerRadius="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:strokeColor="#FFFFFF"
-        app:strokeWidth="3dp" />
+        <Button
+            android:id="@+id/btn_signin"
+            android:layout_width="300dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="36dp"
+            android:backgroundTint="#4E944F"
+            android:fontFamily="@font/robotomono_semibold"
+            android:text="Sign in"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_signup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btnWelcomeRegister"
-        android:layout_width="274dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="48dp"
-        android:backgroundTint="#5393F3"
-        android:paddingStart="80dp"
-        android:paddingTop="17dp"
-        android:paddingEnd="80dp"
-        android:paddingBottom="17dp"
-        android:text="REGISTER"
-        android:textSize="18sp"
-        app:cornerRadius="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnWelcomeSignIn"
-        app:strokeColor="#FFFFFF"
-        app:strokeWidth="3dp" />
+        <Button
+            android:id="@+id/btn_signup"
+            android:layout_width="300dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="#83BD75"
+            android:fontFamily="@font/robotomono_semibold"
+            android:text="Sign up"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnGG"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent" />
 
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/btnGG"
+            app:layout_constraintEnd_toStartOf="@+id/btnGG"
+            app:layout_constraintTop_toTopOf="@+id/btnGG"
+            app:srcCompat="@drawable/grommet_icons_google" />
+
+        <Button
+            android:id="@+id/btnGG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="108dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/robotomono_bold"
+            android:text="sign in with google"
+            android:textColor="#B32D58F3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.601"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

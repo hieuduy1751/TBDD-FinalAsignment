@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E9EFC0">
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="44dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/_6968764" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="720dp"
+        android:background="#B4E197"
+        android:backgroundTint="#B4E197"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnToday"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#fff"
+                android:fontFamily="@font/robotomono_bold"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="60dp"
+                android:text="Today"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#000"
+                android:textSize="16dp"
+                app:cornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.488"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnImportant"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#fff"
+                android:fontFamily="@font/robotomono_bold"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="60dp"
+                android:text="Important"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#000"
+                android:textSize="16dp"
+                app:cornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnToday" />
+
+            <Button
+                android:id="@+id/btnAll"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#fff"
+                android:fontFamily="@font/robotomono_bold"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="60dp"
+                android:text="All"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#000"
+                android:textSize="16dp"
+                app:cornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnImportant" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="12dp"
+                android:translationZ="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnToday"
+                app:layout_constraintStart_toStartOf="@+id/btnToday"
+                app:layout_constraintTop_toTopOf="@+id/btnToday"
+                app:srcCompat="@drawable/calendar_regular" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="12dp"
+                android:translationZ="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnImportant"
+                app:layout_constraintStart_toStartOf="@+id/btnImportant"
+                app:layout_constraintTop_toTopOf="@+id/btnImportant"
+                app:srcCompat="@drawable/star_regular" />
+
+            <ImageView
+                android:id="@+id/imageView18"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="12dp"
+                android:translationZ="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnAll"
+                app:layout_constraintStart_toStartOf="@+id/btnAll"
+                app:layout_constraintTop_toTopOf="@+id/btnAll"
+                app:srcCompat="@drawable/border_all_solid" />
+
+            <TextView
+                android:id="@+id/txtFolderName"
+                android:layout_width="207dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_mono"
+                android:text="Personal List"
+                android:textAlignment="textStart"
+                android:textColor="#000"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAll" />
+
+            <ListView
+                android:id="@+id/listViewFolder"
+                android:layout_width="0dp"
+                android:layout_height="360dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFolderName" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:background="#4E944F"
+                android:backgroundTint="#4E944F"
+                android:translationZ="100dp"
+                app:cardBackgroundColor="#4E944F"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listViewFolder">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/txtFolderAdd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:background="@android:color/transparent"
+                        android:ems="10"
+                        android:fontFamily="@font/roboto_mono"
+                        android:hint="New list"
+                        android:inputType="textPersonName"
+                        android:textColor="#fff"
+                        android:textColorHint="#66FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <ImageButton
+                        android:id="@+id/btnAdd"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/plus_solid_svg"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="239dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_mono"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnLogoutL"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/right_from_bracket_solid"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

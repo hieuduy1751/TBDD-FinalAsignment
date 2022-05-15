@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tbddlab08">
+    package="com.example.finalassignment">
 
     <application
         android:allowBackup="true"
@@ -9,9 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TBDDLab08">
-        <activity android:name=".loggedIn"></activity>
+        <activity
+            android:name=".addNewTask"
+            android:exported="false" />
+        <activity
+            android:name=".editFolder"
+            android:exported="false" />
+        <activity android:name=".loggedIn" />
         <activity android:name=".register" />
+        <activity android:name=".todo" />
+        <activity android:name=".detail" />
         <activity android:name=".login" />
+        <activity android:name=".forgot" />
         <activity android:name=".welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
