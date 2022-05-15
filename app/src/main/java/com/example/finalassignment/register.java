@@ -32,15 +32,16 @@ public class register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        TextView txtSignin = (TextView) findViewById(R.id.txt_res_signin);
-        ImageButton btnRegister = (ImageButton) findViewById(R.id.btn_res);
+        Button btnSignIn = (Button) findViewById(R.id.btnRGLG4);
+        Button btnRegister = (Button) findViewById(R.id.btnLGLG2);
+        Button btnGG = (Button) findViewById(R.id.btnGG5);
         EditText txtEmail = (EditText) findViewById(R.id.edt_res_email);
         EditText txtName = (EditText) findViewById(R.id.edt_res_name);
         EditText txtPassword = (EditText) findViewById(R.id.edt_res_pass);
         EditText txtCfPassword = (EditText) findViewById(R.id.edt_res_confirmpass);
 
 
-        txtSignin.setOnClickListener(new View.OnClickListener() {
+        btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openLogin();
@@ -51,7 +52,14 @@ public class register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("msg", "onClick: " + txtEmail.getText().toString() + txtPassword.getText().toString());
-                register(txtEmail.getText().toString(), txtPassword.getText().toString(), txtName.getText().toString());
+                registerWithEmail(txtEmail.getText().toString(), txtPassword.getText().toString(), txtName.getText().toString());
+            }
+        });
+
+        btnGG.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // todo login with gg logic
             }
         });
     }
@@ -66,7 +74,7 @@ public class register extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void register(String email, String password, String name) {
+    public void registerWithEmail(String email, String password, String name) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -90,7 +98,6 @@ public class register extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("Register", "createUserWithEmail:failure", task.getException());
-                            openLogin();
                         }
                     }
                 });

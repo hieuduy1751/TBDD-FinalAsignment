@@ -19,6 +19,7 @@ public class welcome extends AppCompatActivity {
 
         Button btnLogin = (Button) findViewById(R.id.btn_signin);
         Button btnRegister = (Button) findViewById(R.id.btn_signup);
+        Button btnGG = (Button) findViewById(R.id.btnGG);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +32,13 @@ public class welcome extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openRegister();
+            }
+        });
+
+        btnGG.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // todo login with gg logic code
             }
         });
     }

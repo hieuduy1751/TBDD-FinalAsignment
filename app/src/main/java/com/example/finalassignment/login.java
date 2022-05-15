@@ -30,13 +30,15 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        TextView txtRegister = (TextView) findViewById(R.id.txt_register);
-        ImageButton btnLogin = (ImageButton) findViewById(R.id.btn_signin_2);
+        Button btnRegister = (Button) findViewById(R.id.btnRGLG);
+        Button btnLogin = (Button) findViewById(R.id.btnLGLG);
+        Button btnGG = (Button) findViewById(R.id.btnGG3);
+        TextView btnForgot = (TextView) findViewById(R.id.txt_forgotpass);
         EditText txtEmail = (EditText) findViewById(R.id.edt_username);
         EditText txtPassword = (EditText) findViewById(R.id.edt_password);
 
 
-        txtRegister.setOnClickListener(new View.OnClickListener() {
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openRegister();
@@ -46,7 +48,21 @@ public class login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login(txtEmail.getText().toString(), txtPassword.getText().toString());
+                loginWithEmailAndPassword(txtEmail.getText().toString(), txtPassword.getText().toString());
+            }
+        });
+
+        btnForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openForgot();
+            }
+        });
+
+        btnGG.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // todo login with gg
             }
         });
     }
@@ -56,27 +72,26 @@ public class login extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openLoggedIn() {
-        Intent intent = new Intent(this, loggedIn.class);
-        startActivity(intent);
-    }
-
     public void openTodo() {
         Intent intent = new Intent(this, todo.class);
         startActivity(intent);
     }
 
-    public void login(String email, String password) {
+    public void openForgot() {
+        Intent intent = new Intent(this, forgot.class);
+        startActivity(intent);
+    }
+
+    public void loginWithEmailAndPassword(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()) {
+                if (task.isSuccessful()) {
                     FirebaseUser user = mAuth.getCurrentUser();
                     Log.d("MSG", "onComplete: " + user.getDisplayName());
                     openTodo();
                 } else {
                     Log.d("MSG", "onComplete: Failue");
-                    openTodo();
                 }
             }
         });

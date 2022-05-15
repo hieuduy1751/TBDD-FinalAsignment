@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TBDDLab08">
-        <activity android:name="com.example.finalassignment.loggedIn"></activity>
+        <activity android:name="com.example.finalassignment.loggedIn"/>
         <activity android:name="com.example.finalassignment.register" />
         <activity android:name="com.example.finalassignment.todo" />
         <activity android:name="com.example.finalassignment.detail" />
         <activity android:name="com.example.finalassignment.login" />
+        <activity android:name="com.example.finalassignment.forgot"/>
         <activity android:name="com.example.finalassignment.welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +23,6 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
