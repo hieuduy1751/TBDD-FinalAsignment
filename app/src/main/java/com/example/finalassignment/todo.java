@@ -25,6 +25,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -79,9 +80,8 @@ public class todo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // todo get folder name and create collection
-                db.collection("users").document(user.getUid())
-                        .collection("folders")
-                        .add(new Folder(txtFolderAdd.getText().toString()))
+                db.collection("folders")
+                        .add(new Folder(txtFolderAdd.getText().toString(), user.getUid()))
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
@@ -100,28 +100,29 @@ public class todo extends AppCompatActivity {
         btnToday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // todo go to today collection
+                openDetail("Today");
             }
         });
 
         btnImportant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // todo go to important collection
+                openDetail("Important");
             }
         });
 
         btnAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // todo go to all tasks
+                openDetail("All");
             }
         });
 
     }
 
-    public void openDetail() {
+    public void openDetail(String tag) {
         Intent intent = new Intent(this, detail.class);
+        intent.putExtra("tag", tag);
         startActivity(intent);
     }
 
@@ -132,8 +133,9 @@ public class todo extends AppCompatActivity {
 
     public void getFolders() {
         if (user != null) {
-            db.collection("users").document(user.getUid())
-                    .collection("folders")
+                db.collection("folders")
+                    .whereEqualTo("ownerId", user.getUid())
+                    .orderBy("updatedAt", Query.Direction.DESCENDING)
                     .addSnapshotListener(new EventListener<QuerySnapshot>() {
                         @Override
                         public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -145,7 +147,7 @@ public class todo extends AppCompatActivity {
                             List<Folder> listFolderLoad = new ArrayList<>();
                             for (QueryDocumentSnapshot doc : value) {
                                 if (doc.get("name") != null) {
-                                    listFolderLoad.add(new Folder(doc.getId(), doc.getString("name"), doc.getLong("createdAt"), doc.getLong("updatedAt")));
+                                    listFolderLoad.add(new Folder(doc.getId(), doc.getString("name"), doc.getString("ownerId"), doc.getLong("createdAt"), doc.getLong("updatedAt")));
                                 }
                             }
                             listFolder = listFolderLoad;

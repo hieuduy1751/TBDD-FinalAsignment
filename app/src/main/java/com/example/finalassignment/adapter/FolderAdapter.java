@@ -2,6 +2,9 @@ package com.example.finalassignment.adapter;
 
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +15,7 @@ import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.finalassignment.R;
+import com.example.finalassignment.detail;
 import com.example.finalassignment.entity.Folder;
 
 import java.util.ArrayList;
@@ -31,7 +35,7 @@ public class FolderAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        if (listFolder.size() != 0 && !listFolder.isEmpty()) {
+        if (listFolder.size() != 0) {
             return  listFolder.size();
         }
         return 0;
@@ -63,9 +67,10 @@ public class FolderAdapter extends BaseAdapter {
         btnFolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // todo go to list detail
-                positionSelected = i;
-                notifyDataSetChanged();
+                Intent intent = new Intent(context, detail.class);
+                intent.putExtra("docId", folder.getDocId());
+                intent.putExtra("folderName", folder.getName());
+                context.startActivity(intent);
             }
         });
         return view;

@@ -9,20 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TBDDLab08">
-        <activity android:name="com.example.finalassignment.loggedIn"/>
-        <activity android:name="com.example.finalassignment.register" />
-        <activity android:name="com.example.finalassignment.todo" />
-        <activity android:name="com.example.finalassignment.detail" />
-        <activity android:name="com.example.finalassignment.login" />
-        <activity android:name="com.example.finalassignment.forgot"/>
-        <activity android:name="com.example.finalassignment.welcome">
+        <activity
+            android:name=".addNewTask"
+            android:exported="false" />
+        <activity
+            android:name=".editFolder"
+            android:exported="false" />
+        <activity android:name=".loggedIn" />
+        <activity android:name=".register" />
+        <activity android:name=".todo" />
+        <activity android:name=".detail" />
+        <activity android:name=".login" />
+        <activity android:name=".forgot" />
+        <activity android:name=".welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

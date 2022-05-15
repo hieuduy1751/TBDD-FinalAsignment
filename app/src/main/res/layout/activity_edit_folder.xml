@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".editFolder">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,46 +26,60 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <ListView
-                    android:id="@+id/listTaskView"
-                    android:layout_width="0dp"
-                    android:layout_height="575dp"
+                <EditText
+                    android:id="@+id/txtFolderName111"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/border_edt"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:paddingStart="10dp"
+                    android:text="Name"
+                    android:textColor="#000"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtFolderName" />
 
-                <ImageView
-                    android:id="@+id/imageView15"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginStart="12dp"
-                    android:translationZ="10dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/btnAddTask"
-                    app:layout_constraintStart_toStartOf="@+id/btnAddTask"
-                    app:layout_constraintTop_toTopOf="@+id/btnAddTask"
-                    app:srcCompat="@drawable/plus_solid_svg" />
-
                 <Button
-                    android:id="@+id/btnAddTask"
-                    android:layout_width="300dp"
+                    android:id="@+id/btnSaveFolder"
+                    android:layout_width="150dp"
                     android:layout_height="50dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginBottom="32dp"
                     android:backgroundTint="#4E944F"
                     android:fontFamily="@font/robotomono_bold"
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
-                    android:paddingLeft="60dp"
-                    android:text="Add new task"
-                    android:textAlignment="textStart"
+                    android:paddingLeft="16dp"
+                    android:text="Save"
+                    android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textColor="#fff"
                     android:textSize="16dp"
                     app:cornerRadius="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/btnDelFolder"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="#944E56"
+                    android:fontFamily="@font/robotomono_bold"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingLeft="16dp"
+                    android:text="Delete"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="16dp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnSaveFolder"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.488"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/listTaskView" />
+                    app:layout_constraintStart_toEndOf="@+id/btnSaveFolder"
+                    app:layout_constraintTop_toTopOf="@+id/btnSaveFolder" />
 
                 <TextView
                     android:id="@+id/txtFolderName"
@@ -72,7 +87,7 @@
                     android:layout_height="25dp"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/roboto_mono"
-                    android:text="Personal List"
+                    android:text="Folder name"
                     android:textAlignment="textStart"
                     android:textColor="#000"
                     android:textSize="16dp"
@@ -80,24 +95,11 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageButton
-                    android:id="@+id/btnEditFolderr"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@android:color/transparent"
-                    android:scaleType="fitCenter"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/pen_solid"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/txtName2"
+            android:id="@+id/txtName3"
             android:layout_width="239dp"
             android:layout_height="29dp"
             android:layout_marginTop="16dp"
@@ -111,7 +113,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/btnLogoutL2"
+            android:id="@+id/btnLogoutL3"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginEnd="16dp"
@@ -124,7 +126,7 @@
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         <ImageButton
-            android:id="@+id/btnHome"
+            android:id="@+id/btnHome2"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="44dp"

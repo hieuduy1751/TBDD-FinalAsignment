@@ -7,17 +7,21 @@ public class Folder {
     private String name;
     private long createdAt;
     private long updatedAt;
+    private String ownerId;
 
-    public Folder(String name) {
+    public Folder(String name, String ownerId) {
         this.name = name;
         this.createdAt = new Date().getTime();
         this.updatedAt = new Date().getTime();
+        this.ownerId = ownerId;
     }
 
-    public Folder(String docId, String name, long createdAt, long updatedAt) {
+    public Folder(String docId, String name, String ownerId, long createdAt, long updatedAt) {
+        this.docId = docId;
         this.name = name;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+        this.ownerId = ownerId;
     }
 
     public String getDocId() {
@@ -50,5 +54,13 @@ public class Folder {
 
     public void setUpdatedAt(long updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
     }
 }
