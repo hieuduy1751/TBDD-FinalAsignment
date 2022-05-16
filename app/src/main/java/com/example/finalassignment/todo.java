@@ -1,5 +1,6 @@
 package com.example.finalassignment;
 
+import android.accounts.Account;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finalassignment.adapter.FolderAdapter;
 import com.example.finalassignment.entity.Folder;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,6 +42,13 @@ public class todo extends AppCompatActivity {
     List<Folder> listFolder = new ArrayList<Folder>();
     private FirebaseUser user;
     private ListView listFolderView;
+    private GoogleSignInAccount account;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        account = GoogleSignIn.getLastSignedInAccount(this);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +74,14 @@ public class todo extends AppCompatActivity {
             getFolders();
             FolderAdapter adapter = new FolderAdapter(this, R.layout.folder_button, listFolder);
             listFolderView.setAdapter(adapter);
-        } else {
+        }else if(account != null){
+            txtName.setText(account.getDisplayName());
+            Log.d("Display nam", account.getDisplayName());
+            getFolders();
+            FolderAdapter adapter = new FolderAdapter(this, R.layout.folder_button, listFolder);
+            listFolderView.setAdapter(adapter);
+        }
+        else {
             openWelcome();
         }
 
