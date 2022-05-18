@@ -36,8 +36,8 @@ public class forgot extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-
                             Log.d("Status", "Email sent.");
+                            openLogin();
                         };
                     }
                 });
@@ -64,6 +64,11 @@ public class forgot extends AppCompatActivity {
 
     public void openRegister() {
         Intent intent = new Intent(this, register.class);
+        startActivity(intent);
+    }
+
+    public void openLogin() {
+        Intent intent = new Intent(this, login.class);
         startActivity(intent);
     }
 }

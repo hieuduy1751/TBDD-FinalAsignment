@@ -18,6 +18,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class welcome extends AppCompatActivity {
     Context context;
@@ -25,13 +26,19 @@ public class welcome extends AppCompatActivity {
             .requestEmail()
             .build();
     GoogleSignInClient mGoogleSignInClient ;
+    FirebaseAuth mAuth;
     int RC_SIGN_IN = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         context = this;
         super.onCreate(savedInstanceState);
+        mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_welcome);
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        if (mAuth.getCurrentUser() != null) {
+            openTodo();
+        }
 
         Button btnLogin = (Button) findViewById(R.id.btn_signin);
         Button btnRegister = (Button) findViewById(R.id.btn_signup);
